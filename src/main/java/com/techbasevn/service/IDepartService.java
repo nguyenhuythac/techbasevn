@@ -3,8 +3,6 @@ package com.techbasevn.service;
 import java.util.List;
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.springframework.data.domain.Pageable;
 
 import com.techbasevn.dto.DepartDTO;
