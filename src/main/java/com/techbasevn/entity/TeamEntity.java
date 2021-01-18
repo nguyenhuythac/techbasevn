@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="employee")
+@Table(name="team")
 public class TeamEntity extends BaseEntity{
 	@ManyToOne()
 	@JoinColumn(name="depart_id")

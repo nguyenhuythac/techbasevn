@@ -5,6 +5,7 @@ import java.util.Date;
 public class AbstractDTO<T> {
 
 	private Integer id;
+	private String name;
 	private String createdBy;
 	private Date createdDate;
 	private String modifiedBy;
@@ -46,6 +47,14 @@ public class AbstractDTO<T> {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCreatedBy() {

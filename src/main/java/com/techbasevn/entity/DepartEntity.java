@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="employee")
+@Table(name="depart")
 public class DepartEntity extends BaseEntity{
 	
 	@OneToOne()

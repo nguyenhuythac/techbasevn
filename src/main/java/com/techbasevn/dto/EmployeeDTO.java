@@ -1,43 +1,20 @@
-package com.techbasevn.entity;
+package com.techbasevn.dto;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+public class EmployeeDTO extends AbstractDTO<EmployeeDTO> {
 
-@Entity
-@Table(name="employee")
-public class EmployeeEntity extends BaseEntity{
-	
-	@Column(length=3)
 	private Integer age;
-	
-	@Column(length=5)
 	private String gender;
-	
-	@Column()
-	private Date dob; //day of birth
-	
-	@Column(length=40)
+	private Date dob; // day of birth
 	private String email;
-	
-	@Column
 	private String address;
-	
-	@Column
 	private String phone;
-	
-	@Column 
-	private String position; 
-	
-	@Column 
+	private String position;
 	private Long salary;
-	
-	@ManyToMany(mappedBy = "employees")
-	private List<TeamEntity> teams;
+	private List<TeamDTO> teams = new ArrayList<TeamDTO>();
 
 	public Integer getAge() {
 		return age;
@@ -103,12 +80,12 @@ public class EmployeeEntity extends BaseEntity{
 		this.salary = salary;
 	}
 
-	public List<TeamEntity> getTeams() {
+	public List<TeamDTO> getTeams() {
 		return teams;
 	}
 
-	public void setTeams(List<TeamEntity> teams) {
+	public void setTeams(List<TeamDTO> teams) {
 		this.teams = teams;
 	}
-	
+
 }
