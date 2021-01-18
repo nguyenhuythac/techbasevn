@@ -8,7 +8,7 @@ public class EmployeeDTO extends AbstractDTO<EmployeeDTO> {
 
 	private Integer age;
 	private String gender;
-	private Date dob; // day of birth
+	private Date birthday; // day of birth
 	private String email;
 	private String address;
 	private String phone;
@@ -31,13 +31,13 @@ public class EmployeeDTO extends AbstractDTO<EmployeeDTO> {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
-	public Date getDob() {
-		return dob;
+	
+	public Date getBirthday() {
+		return birthday;
 	}
 
-	public void setDob(Date dob) {
-		this.dob = dob;
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
 	public String getEmail() {

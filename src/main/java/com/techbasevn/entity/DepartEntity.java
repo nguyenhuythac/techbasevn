@@ -18,7 +18,6 @@ public class DepartEntity extends BaseEntity{
 	
 	@OneToMany(mappedBy = "depart")
 	private List<TeamEntity> teams;
-
 	public EmployeeEntity getManager() {
 		return manager;
 	}

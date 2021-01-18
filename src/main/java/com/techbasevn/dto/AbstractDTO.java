@@ -2,6 +2,8 @@ package com.techbasevn.dto;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties({ "createdBy", "createdDate","modifiedBy", "modifiedDate"})
 public class AbstractDTO<T> {
 
 	private Integer id;

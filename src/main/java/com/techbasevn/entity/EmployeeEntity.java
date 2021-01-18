@@ -18,8 +18,8 @@ public class EmployeeEntity extends BaseEntity{
 	@Column(length=5)
 	private String gender;
 	
-	@Column()
-	private Date dob; //day of birth
+	@Column(name="dob")
+	private Date birthday;
 	
 	@Column(length=40)
 	private String email;
@@ -54,13 +54,13 @@ public class EmployeeEntity extends BaseEntity{
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
-	public Date getDob() {
-		return dob;
+	
+	public Date getBirthday() {
+		return birthday;
 	}
 
-	public void setDob(Date dob) {
-		this.dob = dob;
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
 	public String getEmail() {
