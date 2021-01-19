@@ -1,7 +1,9 @@
 1.duong dan lay Chuoi JWT: "/authenticate"
+	-method POST
 
 	{"userName":"techbasevn","password":"techbasevn"}
 
-2.url API truy xuat toan bo nhan vien cong ty: "/api/employee"
+2.url API truy xuat toan bo nhan vien cong ty  "/api/employee"
+	- METHOD GET:
 
 3.thong tin ket noi Mysql o ben trong file application.properties
