@@ -1,0 +1,7 @@
+1.duong dan lay Chuoi JWT: "/authenticate"
+
+	{"userName":"techbasevn","password":"techbasevn"}
+
+2.url API truy xuat toan bo nhan vien cong ty: "/api/employee"
+
+3.thong tin ket noi Mysql o ben trong file application.properties

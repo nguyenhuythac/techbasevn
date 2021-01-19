@@ -29,11 +29,13 @@ public class AuthenticationController {
 	@Autowired
 	private MyUserDetailsService userDetailsService;
 	
-	@GetMapping({ "/hello" })
+	@GetMapping({ "/" })
 	public String firstPage() {
 		return "Hello World";
 	}
-
+	
+	
+	//url taking Token Json
 	@PostMapping(value = "/authenticate")
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest)
 			throws Exception {
