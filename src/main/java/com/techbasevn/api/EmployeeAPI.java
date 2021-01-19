@@ -19,8 +19,8 @@ import com.techbasevn.service.IEmployeeService;
 public class EmployeeAPI {
 	@Autowired
 	private IEmployeeService employeeService;
-	
-	//API show all of employee in The company
+
+	// API show all of employee in The company
 	@GetMapping()
 	public ResponseEntity<List<EmployeeDTO>> employeeList() {
 		// limit of employees API return is 1500
