@@ -25,4 +25,6 @@ public interface IDepartService {
 
 	DepartDTO save(DepartDTO dto);
 
+	Optional<DepartDTO> findByName(String name);
+
 }

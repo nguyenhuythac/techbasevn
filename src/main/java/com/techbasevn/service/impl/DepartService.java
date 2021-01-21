@@ -46,6 +46,12 @@ public class DepartService implements IDepartService{
 		return Optional.ofNullable(modelMapper
 				.map(departRepository.findById(id),DepartDTO.class));
 	}
+	
+	@Override
+	public Optional<DepartDTO> findByName(String name){
+		return Optional.ofNullable(modelMapper
+				.map(departRepository.findByName(name).get(),DepartDTO.class));
+	}
 
 	@Override
 	public boolean existsById(Integer id) {

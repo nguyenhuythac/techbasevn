@@ -19,10 +19,10 @@ public interface IEmployeeService {
 
 	Optional<EmployeeDTO> findById(Integer id);
 
-	List<EmployeeDTO> findAll();
-
 	List<EmployeeDTO> findAll(Pageable pageable);
 
 	EmployeeDTO save(EmployeeDTO dto);
+
+	List<EmployeeDTO> findAll();
 
 }

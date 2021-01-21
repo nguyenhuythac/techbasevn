@@ -1,93 +1,21 @@
 package com.techbasevn.dto;
 
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-@JsonIgnoreProperties({ "createdBy", "createdDate","modifiedBy", "modifiedDate"})
+@Getter
+@Setter
 public class AbstractDTO<T> {
 
 	private Integer id;
 	private String name;
-	private String createdBy;
-	private Date createdDate;
-	private String modifiedBy;
-	private Date modifiedDate;
 
-	public AbstractDTO(int id) {
-		super();
+	public AbstractDTO(int id, String name) {
 		this.id = id;
-	}
-
-	public AbstractDTO(int id, Date createdDate, String createdBy) {
-		super();
-		this.id = id;
-		this.createdBy = createdBy;
-		this.createdDate = createdDate;
-	}
-
-	public AbstractDTO(int id,String createdBy, Date createdDate, String modifiedBy, Date modifiedDate) {
-		super();
-		this.id = id;
-		this.createdBy = createdBy;
-		this.createdDate = createdDate;
-		this.modifiedBy = modifiedBy;
-		this.modifiedDate = modifiedDate;
-	}
-
-	public AbstractDTO() {
-		super();
-	}
-
-	public AbstractDTO(int id, Date modifiedDate) {
-		this.id = id;
-		this.modifiedDate = modifiedDate;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
 		this.name = name;
 	}
 
-	public String getCreatedBy() {
-		return createdBy;
+	public AbstractDTO() {
 	}
 
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
-	public Date getCreatedDate() {
-		return createdDate;
-	}
-
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
-	}
-
-	public String getModifiedBy() {
-		return modifiedBy;
-	}
-
-	public void setModifiedBy(String modifiedBy) {
-		this.modifiedBy = modifiedBy;
-	}
-
-	public Date getModifiedDate() {
-		return modifiedDate;
-	}
-
-	public void setModifiedDate(Date modifiedDate) {
-		this.modifiedDate = modifiedDate;
-	}
 }

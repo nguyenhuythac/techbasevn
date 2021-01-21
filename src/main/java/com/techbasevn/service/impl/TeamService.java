@@ -50,6 +50,11 @@ public class TeamService implements ITeamService {
 	public Optional<TeamDTO> findById(Integer id) {
 		return Optional.ofNullable(modelMapper.map(teamRepository.findById(id), TeamDTO.class));
 	}
+	
+	@Override
+	public Optional<TeamDTO> findByName(String name) {
+		return Optional.ofNullable(modelMapper.map(teamRepository.findByName(name).get(), TeamDTO.class));
+	}
 
 	@Override
 	public boolean existsById(Integer id) {

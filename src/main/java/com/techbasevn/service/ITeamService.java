@@ -26,5 +26,7 @@ public interface ITeamService {
 	List<TeamDTO> findAll(Pageable pageable);
 
 	TeamDTO save(TeamDTO dto);
+
+	Optional<TeamDTO> findByName(String name);
 	
 }

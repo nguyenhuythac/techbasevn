@@ -1,114 +1,70 @@
 package com.techbasevn.entity;
 
-import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
-@Table(name="employee")
-public class EmployeeEntity extends BaseEntity{
-	
-	@Column(length=3)
+@Table(name = "employee")
+@Getter
+@Setter
+public class EmployeeEntity extends BaseEntity {
+
+	@Column(length = 3)
 	private Integer age;
-	
-	@Column(length=5)
+
+	@Column(length = 5)
 	private String gender;
-	
-	@Column(name="dob")
-	private Date birthday;
-	
-	@Column(length=40)
+
+	@Column(length = 40)
 	private String email;
-	
+
 	@Column
 	private String address;
-	
+
 	@Column
 	private String phone;
-	
-	@Column 
-	private String position; 
-	
-	@Column 
+
+	@Column
+	private String position;
+
+	@Column
 	private Long salary;
-	
-	@ManyToMany(mappedBy = "employees")
+
+	@ManyToMany(mappedBy = "employees", cascade = CascadeType.ALL)
 	private List<TeamEntity> teams;
 
-	public Integer getAge() {
-		return age;
+	public EmployeeEntity() {
 	}
 
-	public void setAge(Integer age) {
-		this.age = age;
+	public EmployeeEntity(Integer id, String name) {
+		super(id, name);
 	}
 
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	
-	public Date getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
+	public EmployeeEntity(Integer id, String name, String address, Integer age, String email, String gender,
+			String phone, String position, Long salary) {
+		super(id, name);
 		this.address = address;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
+		this.age = age;
+		this.email = email;
+		this.gender = gender;
 		this.phone = phone;
-	}
-
-	public String getPosition() {
-		return position;
-	}
-
-	public void setPosition(String position) {
 		this.position = position;
-	}
-
-	public Long getSalary() {
-		return salary;
-	}
-
-	public void setSalary(Long salary) {
 		this.salary = salary;
 	}
 
-	public List<TeamEntity> getTeams() {
-		return teams;
+	@Override
+	public String toString() {
+		return "EmployeeEntity [age=" + age + ", gender=" + gender + ", email=" + email + ", address=" + address
+				+ ", phone=" + phone + ", position=" + position + ", salary=" + salary + ", teams=" + teams + "]";
 	}
 
-	public void setTeams(List<TeamEntity> teams) {
-		this.teams = teams;
-	}
-	
 }

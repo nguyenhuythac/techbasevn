@@ -11,9 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.techbasevn.converter.MapList;
-import com.techbasevn.dto.DepartDTO;
 import com.techbasevn.dto.EmployeeDTO;
-import com.techbasevn.entity.DepartEntity;
 import com.techbasevn.entity.EmployeeEntity;
 import com.techbasevn.repository.EmployeeRepository;
 import com.techbasevn.service.IEmployeeService;
@@ -27,7 +25,7 @@ public class EmployeeService implements IEmployeeService {
 	ModelMapper modelMapper;
 
 	@Autowired
-	MapList<DepartDTO, DepartEntity> mapList;
+	MapList<EmployeeDTO, EmployeeEntity> mapList;
 
 	@Override
 	@Transactional
@@ -40,16 +38,15 @@ public class EmployeeService implements IEmployeeService {
 	public List<EmployeeDTO> findAll(Pageable pageable) {
 		return mapList.toDtos(employeeRepository.findAll(pageable).getContent(), EmployeeDTO.class);
 	}
-
+	
 	@Override
 	public List<EmployeeDTO> findAll() {
-		return mapList.toDtos(employeeRepository.findAll(), EmployeeDTO.class);
+		return employeeRepository.getAll();
 	}
 
 	@Override
 	public Optional<EmployeeDTO> findById(Integer id) {
-		return Optional.ofNullable(modelMapper
-				.map(employeeRepository.findById(id), EmployeeDTO.class));
+		return Optional.ofNullable(modelMapper.map(employeeRepository.findById(id), EmployeeDTO.class));
 	}
 
 	@Override
